@@ -1,0 +1,185 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { SITE_INFO } from '../utils/constants';
+---
+
+<MainLayout 
+  title="About Us | Myrtle Beach BJJ & Judo"
+  description="Learn about Myrtle Beach BJJ & Judo's history, mission, and values. Serving the Murrells Inlet community with quality martial arts instruction."
+>
+  <!-- Hero Section -->
+  <section class="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="mb-6">About Us</h1>
+        <p class="text-xl text-gray-300">
+          Building a stronger community through martial arts excellence
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section-lg bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="mb-6">Our Story</h2>
+          <div class="space-y-4 text-gray-700 leading-relaxed">
+            <p>
+              Myrtle Beach BJJ & Judo was founded with a simple mission: to bring world-class martial arts instruction to the Myrtle Beach area and create a welcoming community for practitioners of all levels.
+            </p>
+            <p>
+              Located inside American 24 Fitness in Murrells Inlet, we've built a reputation for excellence in both Judo and Brazilian Jiu-Jitsu instruction. Our academy serves as a second home for students who share a passion for martial arts and personal growth.
+            </p>
+            <p>
+              What started as a small group of dedicated practitioners has grown into a thriving community of martial artists. We're proud to have helped hundreds of students achieve their goals, from getting in shape and learning self-defense to competing at national and international levels.
+            </p>
+            <p>
+              Today, we continue to uphold the highest standards of instruction while maintaining the warm, inclusive atmosphere that has always defined our academy.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative h-96 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-xl">
+          <div class="absolute inset-0 flex items-center justify-center text-9xl opacity-20">
+            🥋
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Values -->
+  <section class="section-lg bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-center mb-16">Our Mission & Values</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="text-5xl mb-4">🎯</div>
+          <h3 class="font-bold text-xl mb-3">Excellence</h3>
+          <p class="text-gray-600">
+            We strive for excellence in everything we do, from instruction quality to student care.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="font-bold text-xl mb-3">Respect</h3>
+          <p class="text-gray-600">
+            Mutual respect is the foundation of our academy and our martial arts practice.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="text-5xl mb-4">👥</div>
+          <h3 class="font-bold text-xl mb-3">Community</h3>
+          <p class="text-gray-600">
+            We foster a supportive community where everyone helps each other grow.
+          </p>
+        </div>
+
+        <div class="bg-white p-8 rounded-xl shadow-md">
+          <div class="text-5xl mb-4">📈</div>
+          <h3 class="font-bold text-xl mb-3">Growth</h3>
+          <p class="text-gray-600">
+            We're committed to continuous improvement, both as individuals and as an academy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section-lg bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-center mb-12">Why Choose Myrtle Beach BJJ & Judo?</h2>
+        
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start bg-gray-50 p-6 rounded-lg">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Experienced Instruction</h3>
+              <p class="text-gray-600">Our instructors are highly skilled black belts with years of teaching experience and competitive success.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start bg-gray-50 p-6 rounded-lg">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Welcoming Environment</h3>
+              <p class="text-gray-600">We pride ourselves on creating a friendly, ego-free atmosphere where everyone feels welcome.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start bg-gray-50 p-6 rounded-lg">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Proven Track Record</h3>
+              <p class="text-gray-600">With 30+ five-star reviews, our students' success speaks for itself.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start bg-gray-50 p-6 rounded-lg">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Convenient Location</h3>
+              <p class="text-gray-600">Located inside American 24 Fitness with ample parking and easy access from Highway 17.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 items-start bg-gray-50 p-6 rounded-lg">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Flexible Schedule</h3>
+              <p class="text-gray-600">Multiple classes per week to fit your busy lifestyle, with options for day and evening training.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section class="section-lg bg-gray-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-white mb-6">Join Our Community</h2>
+        <p class="text-xl text-gray-300 mb-8">
+          More than just a place to train, we're a family united by our passion for martial arts and mutual support. Come experience the difference for yourself.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn btn-primary btn-large">
+            Start Your Free Trial
+          </a>
+          <a href="/programs" class="btn btn-white btn-large">
+            View Programs
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

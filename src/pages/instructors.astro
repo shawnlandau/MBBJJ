@@ -1,0 +1,142 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { INSTRUCTORS } from '../utils/constants';
+---
+
+<MainLayout 
+  title="Instructors | Myrtle Beach BJJ & Judo"
+  description="Meet our experienced instructors. Black belts with years of teaching experience dedicated to your success."
+>
+  <!-- Hero Section -->
+  <section class="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="mb-6">Our Instructors</h1>
+        <p class="text-xl text-gray-300">
+          Learn from experienced black belts dedicated to helping you achieve your martial arts goals
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructors -->
+  <section class="section-lg bg-white">
+    <div class="container mx-auto px-4">
+      <div class="space-y-16">
+        {INSTRUCTORS.map((instructor, index) => (
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+              {/* Image */}
+              <div class="relative h-96 lg:h-auto bg-gradient-to-br from-gray-200 to-gray-300">
+                <div class="absolute inset-0 flex items-center justify-center text-9xl opacity-20">
+                  🥋
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                  <p class="text-sm font-semibold mb-1">{instructor.rank}</p>
+                  <p class="text-2xl font-bold">{instructor.name}</p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div class="lg:col-span-2 p-8 lg:p-12">
+                <div class="mb-6">
+                  <h2 class="text-3xl font-bold mb-2">{instructor.name}</h2>
+                  <p class="text-xl text-red-600 font-semibold mb-1">{instructor.title}</p>
+                  <p class="text-lg text-gray-600">{instructor.rank}</p>
+                </div>
+
+                <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                  {instructor.bio}
+                </p>
+
+                {/* Certifications */}
+                <div class="mb-8">
+                  <h3 class="font-bold text-xl mb-4">Certifications & Credentials</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {instructor.certifications.map((cert) => (
+                      <div class="flex items-center gap-3 bg-gray-50 p-3 rounded-lg">
+                        <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-gray-700">{cert}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Specialties */}
+                <div>
+                  <h3 class="font-bold text-xl mb-4">Teaching Specialties</h3>
+                  <div class="flex flex-wrap gap-2">
+                    {instructor.specialties.map((specialty) => (
+                      <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-semibold">
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Note about instructors -->}
+      <div class="mt-16 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+        <h3 class="font-bold text-lg mb-3 text-blue-900">About Our Instruction</h3>
+        <p class="text-gray-700 leading-relaxed">
+          All our instructors are thoroughly vetted, background-checked, and maintain current certifications in their respective martial arts. They are passionate about teaching and dedicated to creating a safe, respectful, and effective learning environment for all students regardless of experience level.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Philosophy -->
+  <section class="section-lg bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-center mb-12">Our Teaching Philosophy</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="text-5xl mb-4">🎯</div>
+            <h3 class="font-bold text-xl mb-3">Student-Focused</h3>
+            <p class="text-gray-600">
+              We adapt our teaching to each student's learning style and pace
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="text-5xl mb-4">🤝</div>
+            <h3 class="font-bold text-xl mb-3">Respect & Safety</h3>
+            <p class="text-gray-600">
+              Creating a respectful, safe environment is our top priority
+            </p>
+          </div>
+
+          <div class="text-center">
+            <div class="text-5xl mb-4">📈</div>
+            <h3 class="font-bold text-xl mb-3">Continuous Growth</h3>
+            <p class="text-gray-600">
+              We emphasize steady progress and lifelong learning
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-lg bg-gradient-to-br from-red-600 to-red-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-white mb-6">Train With the Best</h2>
+      <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+        Experience the difference that expert instruction makes. Join our community and start your martial arts journey today.
+      </p>
+      <a href="/contact" class="btn btn-white btn-large">
+        Schedule Your Free Trial
+      </a>
+    </div>
+  </section>
+</MainLayout>

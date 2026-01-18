@@ -1,0 +1,94 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { PROGRAMS } from '../utils/constants';
+import { FaCheck } from 'react-icons/fa';
+---
+
+<MainLayout 
+  title="Programs | Myrtle Beach BJJ & Judo"
+  description="Explore our Judo and Brazilian Jiu-Jitsu programs for adults. All skill levels welcome. Private instruction available."
+>
+  <!-- Hero Section -->
+  <section class="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="mb-6">Our Programs</h1>
+        <p class="text-xl text-gray-300">
+          Choose the perfect program to begin your martial arts journey. All classes are designed for adult students of all experience levels.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs Detail -->
+  <section class="section-lg bg-white">
+    <div class="container mx-auto px-4">
+      {PROGRAMS.map((program, index) => (
+        <div class={`mb-20 ${index !== PROGRAMS.length - 1 ? 'pb-20 border-b border-gray-200' : ''}`}>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div class={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
+              <div class="text-6xl mb-4">{program.icon}</div>
+              <h2 class="text-3xl font-bold mb-4">{program.title}</h2>
+              <p class="text-lg text-gray-600 mb-6">{program.description}</p>
+              
+              <h3 class="font-bold text-xl mb-4">What You'll Learn:</h3>
+              <ul class="space-y-3 mb-8">
+                {program.features.map((feature) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                <h4 class="font-bold mb-3">Class Schedule:</h4>
+                {program.schedule.map((time) => (
+                  <p class="text-gray-700 mb-1">📅 {time}</p>
+                ))}
+              </div>
+
+              <a href="/contact" class="btn btn-primary btn-large">
+                Start Training Today
+              </a>
+            </div>
+
+            {/* Image Placeholder */}
+            <div class={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
+              <div class="relative h-96 bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-xl">
+                <div class="absolute inset-0 flex items-center justify-center text-9xl opacity-20">
+                  {program.icon}
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                  <p class="text-2xl font-bold">{program.title}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-lg bg-gradient-to-br from-red-600 to-red-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-white mb-6">Ready to Get Started?</h2>
+      <p class="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
+        Take the first step towards mastering martial arts. Join our community today and experience the difference expert instruction makes.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn btn-white btn-large">
+          Schedule Free Trial
+        </a>
+        <a href="/schedule" class="btn btn-secondary btn-large border-white text-white hover:bg-white hover:text-red-600">
+          View Schedule
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -1,0 +1,140 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { SCHEDULE } from '../utils/constants';
+---
+
+<MainLayout 
+  title="Class Schedule | Myrtle Beach BJJ & Judo"
+  description="View our weekly class schedule for Judo and Brazilian Jiu-Jitsu. Classes Monday through Saturday for all skill levels."
+>
+  <!-- Hero Section -->
+  <section class="relative py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="mb-6">Class Schedule</h1>
+        <p class="text-xl text-gray-300">
+          Train 6 days a week with our flexible schedule. All classes are suitable for beginners through advanced students.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Grid - Desktop -->}
+  <section class="section-lg bg-white">
+    <div class="container mx-auto px-4">
+      <!-- Desktop View -->
+      <div class="hidden md:block overflow-x-auto">
+        <table class="w-full bg-white shadow-xl rounded-lg overflow-hidden">
+          <thead class="bg-gradient-to-r from-red-600 to-red-700 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left text-lg font-bold">Day</th>
+              <th class="px-6 py-4 text-left text-lg font-bold">Time</th>
+              <th class="px-6 py-4 text-left text-lg font-bold">Program</th>
+              <th class="px-6 py-4 text-left text-lg font-bold">Level</th>
+              <th class="px-6 py-4 text-left text-lg font-bold">Instructor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SCHEDULE.map((day, dayIndex) => {
+              if (day.classes.length === 0) {
+                return (
+                  <tr class={dayIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                    <td class="px-6 py-4 font-bold text-gray-900">{day.day}</td>
+                    <td colspan="4" class="px-6 py-4 text-gray-500 italic">No classes scheduled</td>
+                  </tr>
+                );
+              }
+              
+              return day.classes.map((classInfo, classIndex) => (
+                <tr class={dayIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                  {classIndex === 0 && (
+                    <td class="px-6 py-4 font-bold text-gray-900" rowspan={day.classes.length}>
+                      {day.day}
+                    </td>
+                  )}
+                  <td class="px-6 py-4 text-gray-700">{classInfo.time}</td>
+                  <td class="px-6 py-4">
+                    <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold">
+                      {classInfo.program}
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 text-gray-700">{classInfo.level}</td>
+                  <td class="px-6 py-4 text-gray-700">{classInfo.instructor}</td>
+                </tr>
+              ));
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile View -->
+      <div class="md:hidden space-y-4">
+        {SCHEDULE.map((day) => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-4">
+              <h3 class="font-bold text-xl">{day.day}</h3>
+            </div>
+            <div class="p-6">
+              {day.classes.length === 0 ? (
+                <p class="text-gray-500 italic">No classes scheduled</p>
+              ) : (
+                <div class="space-y-4">
+                  {day.classes.map((classInfo) => (
+                    <div class="border-l-4 border-red-500 pl-4">
+                      <p class="font-bold text-gray-900 mb-1">{classInfo.time}</p>
+                      <p class="text-red-600 font-semibold mb-1">{classInfo.program}</p>
+                      <p class="text-sm text-gray-600">Level: {classInfo.level}</p>
+                      <p class="text-sm text-gray-600">Instructor: {classInfo.instructor}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Important Notes -->
+      <div class="mt-12 bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+        <h3 class="font-bold text-lg mb-3 text-blue-900">Important Information</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex gap-2">
+            <span class="text-blue-600">•</span>
+            <span>Please arrive 10-15 minutes early for your first class</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="text-blue-600">•</span>
+            <span>All classes are suitable for beginners through advanced students</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="text-blue-600">•</span>
+            <span>Gi (uniform) required after trial period - we can help you get one</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="text-blue-600">•</span>
+            <span>Private lessons available by appointment</span>
+          </li>
+          <li class="flex gap-2">
+            <span class="text-blue-600">•</span>
+            <span>Schedule subject to change - check our social media for updates</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-lg bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="mb-6">Ready to Join a Class?</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Don't wait to start your martial arts journey. Contact us today to schedule your free trial class.
+        </p>
+        <a href="/contact" class="btn btn-primary btn-large">
+          Schedule Your Free Trial
+        </a>
+      </div>
+    </div>
+  </section>
+</MainLayout>

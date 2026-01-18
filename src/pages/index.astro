@@ -1,0 +1,19 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/Hero';
+import ProgramsSection from '../components/ProgramsSection';
+import BenefitsSection from '../components/BenefitsSection';
+import TestimonialsSection from '../components/TestimonialsSection';
+import LocationSection from '../components/LocationSection';
+---
+
+<MainLayout 
+  title="Myrtle Beach BJJ & Judo | Premier Martial Arts Training in Murrells Inlet"
+  description="Master Judo and Brazilian Jiu-Jitsu at Myrtle Beach's premier martial arts academy. Expert instruction, all skill levels welcome. Start your free trial today!"
+>
+  <Hero client:load />
+  <ProgramsSection client:load />
+  <BenefitsSection client:load />
+  <TestimonialsSection client:load />
+  <LocationSection client:load />
+</MainLayout>
